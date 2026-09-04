@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/add-student.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="courses.html"><i class="fas fa-book-open"></i> Programs</a>
+            <a href="add-course.html"><i class="fas fa-plus-circle"></i> Add Course</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="add-student.html" class="active"><i class="fas fa-user-plus"></i> Add Student</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Fees</a>
+            <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Add New Student</h1>
+                    <p>Enroll a new student into a program</p>
+                </div>
+                <div class="right">
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="addStudentForm" onsubmit="return submitStudent()">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user-plus"></i> Student Information</h3>
+
+                        <!-- Student Photo -->
+                        <div class="form-group" style="text-align:center;">
+                            <div class="photo-upload">
+                                <div class="photo-preview" id="photoPreview">
+                                    <i class="fas fa-camera" style="font-size:32px; color:#6b7a8f;"></i>
+                                    <span style="display:block; margin-top:8px;">Upload Photo</span>
+                                </div>
+                                <input type="file" id="studentPhoto" accept="image/*" onchange="previewPhoto(this)" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name <span class="required">*</span></label>
+                                <input type="text" id="studentName" placeholder="e.g., Amaya Perera" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth <span class="required">*</span></label>
+                                <input type="date" id="studentDob" required />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email <span class="required">*</span></label>
+                                <input type="email" id="studentEmail" placeholder="amaya@example.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" id="studentPhone" placeholder="+94 77 123 4567" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Gender <span class="required">*</span></label>
+                                <select id="studentGender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select id="studentStatus">
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea id="studentAddress" rows="2" placeholder="Home address..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Enrollment Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Program <span class="required">*</span></label>
+                                <select id="studentProgram" required>
+                                    <option value="">Select Program</option>
+                                    <option value="1">BIT - Bachelor of Information Technology</option>
+                                    <option value="2">BBA - Bachelor of Business Administration</option>
+                                    <option value="3">HND - Higher National Diploma</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Intake Year <span class="required">*</span></label>
+                                <select id="studentYear" required>
+                                    <option value="">Select Year</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Enrollment Date <span class="required">*</span></label>
+                            <input type="date" id="enrollmentDate" required />
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-save"></i> Enroll Student
+                        </button>
+                        <a href="students.html" class="btn btn-outline btn-lg">
+                            <i class="fas fa-times"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/add-student.js"></script>
+</body>
+</html>

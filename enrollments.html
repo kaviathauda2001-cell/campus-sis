@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enrollments - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <nav class="sidebar">
+            <div class="logo"><i class="fas fa-graduation-cap"></i> <span>Campus SIS</span></div>
+            <div class="nav-label">Main</div>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="courses.html"><i class="fas fa-book"></i> Courses</a>
+            <a href="enrollments.html" class="active"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <div class="nav-label" style="margin-top:20px;">Student</div>
+            <a href="profile.html"><i class="fas fa-id-card"></i> Profile</a>
+            <a href="make-payment.html"><i class="fas fa-hand-holding-usd"></i> Make Payment</a>
+        </nav>
+
+        <div class="main-content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Enrollments</h1>
+                    <p>Manage student enrollments</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search enrollments..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <div class="table-header">
+                    <h3>Enrollments</h3>
+                    <button class="btn btn-primary" onclick="alert('Add Enrollment Form')">
+                        <i class="fas fa-plus"></i> Add Enrollment
+                    </button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Semester</th>
+                            <th>Program</th>
+                            <th>Email Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STU2026001</td>
+                            <td>Semester 2</td>
+                            <td>Bachelor in Information Technology</td>
+                            <td>10 Jan 2026</td>
+                            <td><span class="status-badge enrolled">Enrolled</span></td>
+                        </tr>
+                        <tr>
+                            <td>STU2026002</td>
+                            <td>Semester 1</td>
+                            <td>Bachelor in Information Technology</td>
+                            <td>05 Aug 2025</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>STU2026003</td>
+                            <td>Semester 2</td>
+                            <td>Bachelor in Information Technology</td>
+                            <td>12 Jan 2025</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>STU2026004</td>
+                            <td>Semester 1</td>
+                            <td>Bachelor in Information Technology</td>
+                            <td>08 Aug 2024</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <span>Showing 1 to 4 of 45 entries</span>
+                    <div>
+                        <span class="page-active">1</span>
+                        <span class="page-item">2</span>
+                        <span class="page-item">3</span>
+                        <span class="page-item">...</span>
+                        <span class="page-item">7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

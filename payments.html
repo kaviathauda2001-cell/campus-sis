@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payments - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <nav class="sidebar">
+            <div class="logo"><i class="fas fa-graduation-cap"></i> <span>Campus SIS</span></div>
+            <div class="nav-label">Main</div>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="courses.html"><i class="fas fa-book"></i> Courses</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html" class="active"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <div class="nav-label" style="margin-top:20px;">Student</div>
+            <a href="profile.html"><i class="fas fa-id-card"></i> Profile</a>
+            <a href="make-payment.html"><i class="fas fa-hand-holding-usd"></i> Make Payment</a>
+        </nav>
+
+        <div class="main-content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Payments</h1>
+                    <p>Manage student payments</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search by student name, invoice, or ID..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <div class="table-header">
+                    <h3>Payments</h3>
+                    <div class="actions" style="display:flex;gap:10px;">
+                        <button class="btn btn-outline"><i class="fas fa-filter"></i> Filter</button>
+                        <button class="btn btn-outline"><i class="fas fa-file-export"></i> Export</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice No.</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Total Amount</th>
+                            <th>Paid Amount</th>
+                            <th>Due Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-2026-0001</td>
+                            <td>Amaya Perera</td>
+                            <td>10 Jan 2026</td>
+                            <td>LKR 50,000</td>
+                            <td>LKR 50,000</td>
+                            <td>LKR 0</td>
+                            <td><span class="status-badge paid">Paid</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2026-0002</td>
+                            <td>Nethmi Silva</td>
+                            <td>10 Jan 2026</td>
+                            <td>LKR 45,000</td>
+                            <td>LKR 45,000</td>
+                            <td>LKR 0</td>
+                            <td><span class="status-badge paid">Paid</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2025-0003</td>
+                            <td>Kasun Fernando</td>
+                            <td>20 May 2026</td>
+                            <td>LKR 50,000</td>
+                            <td>LKR 30,000</td>
+                            <td>LKR 20,000</td>
+                            <td><span class="status-badge partial">Partial</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2025-0004</td>
+                            <td>Dinthi Jayasekara</td>
+                            <td>23 May 2026</td>
+                            <td>LKR 60,000</td>
+                            <td>LKR 0</td>
+                            <td>LKR 60,000</td>
+                            <td><span class="status-badge due">Due</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2025-0005</td>
+                            <td>Saman Perera</td>
+                            <td>12 Jan 2026</td>
+                            <td>LKR 150,000</td>
+                            <td>LKR 50,000</td>
+                            <td>LKR 0</td>
+                            <td><span class="status-badge paid">Paid</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2025-0006</td>
+                            <td>Lahiru Fonseka</td>
+                            <td>12 Jan 2026</td>
+                            <td>LKR 45,000</td>
+                            <td>LKR 20,000</td>
+                            <td>LKR 25,000</td>
+                            <td><span class="status-badge partial">Partial</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2025-0007</td>
+                            <td>Yashini De Silva</td>
+                            <td>12 Jan 2026</td>
+                            <td>LKR 50,000</td>
+                            <td>LKR 50,000</td>
+                            <td>LKR 0</td>
+                            <td><span class="status-badge paid">Paid</span></td>
+                            <td><i class="fas fa-eye action-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <span>Showing 1 to 7 of 1250 entries</span>
+                    <div>
+                        <span class="page-active">1</span>
+                        <span class="page-item">2</span>
+                        <span class="page-item">3</span>
+                        <span class="page-item">...</span>
+                        <span class="page-item">200</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

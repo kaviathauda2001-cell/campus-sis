@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="dashboard.html" class="active"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="courses.html"><i class="fas fa-book"></i> Courses</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <div class="nav-label" style="margin-top:20px;">Student</div>
+            <a href="profile.html"><i class="fas fa-id-card"></i> Profile</a>
+            <a href="make-payment.html"><i class="fas fa-hand-holding-usd"></i> Make Payment</a>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Overview of your campus</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STATS CARDS ===== -->
+            <div class="cards-grid">
+                <div class="stat-card">
+                    <div class="label">Total Students</div>
+                    <div class="value">1,250</div>
+                    <div class="change"><i class="fas fa-arrow-up"></i> 12.5% from last month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Active Students</div>
+                    <div class="value">45</div>
+                    <div class="change"><i class="fas fa-arrow-up"></i> 8.4% from last month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Total Courses</div>
+                    <div class="value">10</div>
+                    <div class="change"><i class="fas fa-arrow-up"></i> 5.5% from last month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Departments</div>
+                    <div class="value">0</div>
+                    <div class="change"><i class="fas fa-minus"></i> 0.0% from last month</div>
+                </div>
+            </div>
+
+            <!-- ===== RECENT PAYMENTS ===== -->
+            <div class="table-wrap">
+                <div class="table-header">
+                    <h3><i class="fas fa-clock" style="color:#2a4b6e;"></i> Recent Payments</h3>
+                    <span class="text-muted">Partial</span>
+                </div>
+                <div class="payment-list">
+                    <span><strong>Amaya Perera</strong> LKR 65,000</span>
+                    <span><strong>Nethmi Silva</strong> LKR 20,000</span>
+                    <span><strong>Kasun Fernando</strong> LKR 33,000</span>
+                    <span><strong>Dinthi Jayasekara</strong> LKR 80,000</span>
+                    <span><strong>Saduni Hewage</strong> LKR 175,000</span>
+                </div>
+            </div>
+
+            <!-- ===== DUE PAYMENT ===== -->
+            <div class="table-wrap">
+                <div class="table-header">
+                    <h3><i class="fas fa-exclamation-triangle" style="color:#b7651e;"></i> Due Payment</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Invoice No.</th>
+                            <th>Due Date</th>
+                            <th>Amount Due</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yashini De Silva</td>
+                            <td>INV-2026-0078</td>
+                            <td>30 May 2026</td>
+                            <td>LKR 60,000</td>
+                            <td><span class="status-badge due">Not Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dilshan Fernando</td>
+                            <td>INV-2026-0011</td>
+                            <td>28 May 2026</td>
+                            <td>LKR 30,000</td>
+                            <td><span class="status-badge partial">Partial</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="figma-note">
+                <i class="fas fa-pen-fancy"></i> Sign up to comment, edit, inspect and more.
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

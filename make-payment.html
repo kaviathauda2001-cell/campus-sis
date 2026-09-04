@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Payment - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <nav class="sidebar">
+            <div class="logo"><i class="fas fa-graduation-cap"></i> <span>Campus SIS</span></div>
+            <div class="nav-label">Main</div>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="courses.html"><i class="fas fa-book"></i> Courses</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <div class="nav-label" style="margin-top:20px;">Student</div>
+            <a href="profile.html"><i class="fas fa-id-card"></i> Profile</a>
+            <a href="make-payment.html" class="active"><i class="fas fa-hand-holding-usd"></i> Make Payment</a>
+        </nav>
+
+        <div class="main-content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Make Payment</h1>
+                    <p>Students / STU2026001 / Make Payment</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Form -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <!-- Left Column -->
+                <div style="background:#fff;border-radius:16px;padding:24px;border:1px solid #eef2f7;">
+                    <h4 style="margin-bottom:16px;color:#0b1e33;">
+                        <i class="fas fa-credit-card" style="color:#2a4b6e;"></i> Payment Summary
+                    </h4>
+                    <div style="background:#f8faff;border-radius:12px;padding:16px 20px;">
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:14px;">
+                            <span>Student Name</span>
+                            <span><strong>Amaya Perera</strong></span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:14px;">
+                            <span>Student ID</span>
+                            <span><strong>STU2026001</strong></span>
+                        </div>
+                        <hr />
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:14px;">
+                            <span>Total Fees</span>
+                            <span><strong>LKR 150,000</strong></span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:14px;">
+                            <span>Paid Amount</span>
+                            <span><strong style="color:#2e7d32;">LKR 85,000</strong></span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:14px;font-weight:700;border-top:2px solid #e9edf4;margin-top:8px;padding-top:12px;">
+                            <span>Due Amount</span>
+                            <span><strong style="color:#c62828;">LKR 65,000</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label"><strong>Payment Amount</strong></label>
+                        <div class="input-group">
+                            <span class="input-group-text">LKR</span>
+                            <input type="number" class="form-control" value="65000" />
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100 mt-3" onclick="alert('Payment processed successfully!')">
+                        <i class="fas fa-check-circle"></i> Proceed to Pay
+                    </button>
+                </div>
+
+                <!-- Right Column -->
+                <div style="background:#fff;border-radius:16px;padding:24px;border:1px solid #eef2f7;">
+                    <h4 style="margin-bottom:16px;color:#0b1e33;">
+                        <i class="fas fa-wallet" style="color:#2a4b6e;"></i> Payment Methods
+                    </h4>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+                        <div style="background:#f8faff;padding:10px 20px;border-radius:30px;border:1px solid #e9edf4;font-size:14px;cursor:pointer;">
+                            <i class="fas fa-credit-card" style="color:#2a4b6e;"></i> Credit / Debit Card
+                        </div>
+                        <div style="background:#f8faff;padding:10px 20px;border-radius:30px;border:1px solid #e9edf4;font-size:14px;cursor:pointer;">
+                            <i class="fas fa-university" style="color:#2a4b6e;"></i> Bank Transfer
+                        </div>
+                        <div style="background:#f8faff;padding:10px 20px;border-radius:30px;border:1px solid #e9edf4;font-size:14px;cursor:pointer;">
+                            <i class="fas fa-globe" style="color:#2a4b6e;"></i> Online Banking
+                        </div>
+                        <div style="background:#f8faff;padding:10px 20px;border-radius:30px;border:1px solid #e9edf4;font-size:14px;cursor:pointer;">
+                            <i class="fas fa-money-bill" style="color:#2a4b6e;"></i> Cash at Office
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle"></i> After payment, please upload the payment receipt.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

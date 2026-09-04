@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/students.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="courses.html"><i class="fas fa-book-open"></i> Programs</a>
+            <a href="add-course.html"><i class="fas fa-plus-circle"></i> Add Course</a>
+            <a href="students.html" class="active"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="add-student.html"><i class="fas fa-user-plus"></i> Add Student</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Fees</a>
+            <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Students</h1>
+                    <p>View and manage all students</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search students..." id="studentSearch" />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-bar">
+                <select id="filterProgram" class="filter-select">
+                    <option value="all">All Programs</option>
+                    <option value="BIT">BIT</option>
+                    <option value="BBA">BBA</option>
+                    <option value="HND">HND</option>
+                </select>
+                <select id="filterStatus" class="filter-select">
+                    <option value="all">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Graduated">Graduated</option>
+                </select>
+                <select id="filterYear" class="filter-select">
+                    <option value="all">All Years</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+                <a href="add-student.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add Student
+                </a>
+            </div>
+
+            <!-- Students Table -->
+            <div class="table-wrap">
+                <div class="table-header">
+                    <h3>Student Directory</h3>
+                    <span id="studentCount" style="font-size:16px; color:#6b7a8f;">0 students found</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Register No.</th>
+                            <th>Name</th>
+                            <th>Program</th>
+                            <th>Year</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../data/sample-data.js"></script>
+    <script src="../js/students.js"></script>
+</body>
+</html>

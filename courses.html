@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/courses.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="courses.html" class="active"><i class="fas fa-book-open"></i> Programs</a>
+            <a href="add-course.html"><i class="fas fa-plus-circle"></i> Add Course</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Fees</a>
+            <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <!-- TOP BAR -->
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Academic Programs</h1>
+                    <p>Manage courses, semesters, modules, and student results</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search programs..." id="courseSearch" />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRAMS LIST -->
+            <div id="coursesContainer">
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <!-- ADD COURSE BUTTON -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="add-course.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-plus-circle"></i> Add New Program
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../data/sample-data.js"></script>
+    <script src="../js/courses.js"></script>
+</body>
+</html>

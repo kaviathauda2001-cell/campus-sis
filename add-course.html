@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Course - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/add-course.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="courses.html"><i class="fas fa-book-open"></i> Programs</a>
+            <a href="add-course.html" class="active"><i class="fas fa-plus-circle"></i> Add Course</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="add-student.html"><i class="fas fa-user-plus"></i> Add Student</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Fees</a>
+            <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Add New Program</h1>
+                    <p>Create a new academic program with semesters and modules</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FORM ===== -->
+            <div class="page-wrapper">
+                <div class="form-container">
+                    <form id="addCourseForm" onsubmit="return submitCourse()">
+
+                        <!-- ===== SECTION 1: Program Information ===== -->
+                        <div class="form-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-info-circle"></i> Program Information
+                            </h3>
+                            <p class="section-desc">Enter the basic details of the academic program</p>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Program Code <span class="required">*</span></label>
+                                    <input type="text" id="courseCode" placeholder="e.g., BIT, BBA, HND" required />
+                                    <div class="hint">Unique identifier for the program</div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Duration <span class="required">*</span></label>
+                                    <select id="duration" required>
+                                        <option value="3">3 Years</option>
+                                        <option value="4" selected>4 Years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 14px;">
+                                <label>Program Name <span class="required">*</span></label>
+                                <input type="text" id="courseName" placeholder="e.g., Bachelor of Information Technology" required />
+                            </div>
+
+                            <div class="form-row" style="margin-top: 14px;">
+                                <div class="form-group">
+                                    <label>Coordinator</label>
+                                    <input type="text" id="coordinator" placeholder="e.g., Dr. Saman Perera" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Academic Year</label>
+                                    <select id="academicYear">
+                                        <option value="2023">2023</option>
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 14px;">
+                                <label>Description</label>
+                                <textarea id="description" rows="3" placeholder="Brief description of the program..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- ===== SECTION 2: Semesters & Modules ===== -->
+                        <div class="form-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-layer-group"></i> Semesters & Modules
+                            </h3>
+                            <p class="section-desc">Add semesters and their modules with credit values</p>
+
+                            <div id="semestersContainer">
+                                <!-- Semester 1 -->
+                                <div class="semester-card" id="semester1">
+                                    <div class="semester-header">
+                                        <h4 class="semester-title">
+                                            <i class="fas fa-calendar-alt"></i> Semester 1
+                                        </h4>
+                                        <button type="button" class="btn btn-sm btn-outline btn-remove-semester" onclick="removeSemester('semester1')">
+                                            <i class="fas fa-trash"></i> Remove
+                                        </button>
+                                    </div>
+                                    <div class="semester-body">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Semester Name</label>
+                                                <input type="text" class="semester-name" value="Semester 1" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Year</label>
+                                                <input type="text" class="semester-year" placeholder="e.g., 2024" value="2024" />
+                                            </div>
+                                        </div>
+
+                                        <div class="modules-container" style="margin-top: 14px;">
+                                            <!-- Module 1 -->
+                                            <div class="module-row">
+                                                <div class="field-code form-group">
+                                                    <label>Module Code</label>
+                                                    <input type="text" class="module-code" placeholder="e.g., IT101" />
+                                                </div>
+                                                <div class="field-name form-group">
+                                                    <label>Module Name</label>
+                                                    <input type="text" class="module-name" placeholder="e.g., Programming" />
+                                                </div>
+                                                <div class="field-credits form-group">
+                                                    <label>Credits</label>
+                                                    <input type="number" class="module-credits" placeholder="4" min="1" max="6" />
+                                                </div>
+                                                <div class="field-remove">
+                                                    <button type="button" class="btn-remove-module" onclick="removeModule(this)" title="Remove Module">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Module 2 -->
+                                            <div class="module-row">
+                                                <div class="field-code form-group">
+                                                    <label>Module Code</label>
+                                                    <input type="text" class="module-code" placeholder="e.g., IT102" />
+                                                </div>
+                                                <div class="field-name form-group">
+                                                    <label>Module Name</label>
+                                                    <input type="text" class="module-name" placeholder="e.g., Mathematics" />
+                                                </div>
+                                                <div class="field-credits form-group">
+                                                    <label>Credits</label>
+                                                    <input type="number" class="module-credits" placeholder="3" min="1" max="6" />
+                                                </div>
+                                                <div class="field-remove">
+                                                    <button type="button" class="btn-remove-module" onclick="removeModule(this)" title="Remove Module">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" class="btn-add-module" onclick="addModule(this)" style="margin-top: 12px;">
+                                            <i class="fas fa-plus"></i> Add Module
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-add-semester" onclick="addSemester()" style="margin-top: 12px;">
+                                <i class="fas fa-plus-circle"></i> Add Another Semester
+                            </button>
+                        </div>
+
+                        <!-- ===== FORM ACTIONS ===== -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Create Program
+                            </button>
+                            <a href="courses.html" class="btn btn-outline">
+                                <i class="fas fa-times"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/add-course.js"></script>
+</body>
+</html>

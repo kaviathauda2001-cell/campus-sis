@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="courses.html"><i class="fas fa-book"></i> Courses</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <div class="nav-label" style="margin-top:20px;">Student</div>
+            <a href="profile.html" class="active"><i class="fas fa-id-card"></i> Profile</a>
+            <a href="make-payment.html"><i class="fas fa-hand-holding-usd"></i> Make Payment</a>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Student Profile</h1>
+                    <p>Students / STU2026001</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PROFILE CONTENT ===== -->
+            <div class="profile-container">
+                <!-- Student Header -->
+                <div class="profile-header-card">
+                    <div class="profile-student-info">
+                        <h2>Amaya Perera</h2>
+                        <span class="badge-status active">Active</span>
+                        <p class="student-id"><strong>STU2026001</strong></p>
+                        <p class="student-program">Bachelor in Information Technology</p>
+                    </div>
+                </div>
+
+                <!-- Profile Grid -->
+                <div class="profile-grid">
+                    <!-- Personal Info -->
+                    <div class="profile-card">
+                        <h4><i class="fas fa-user"></i> Personal Info</h4>
+                        <div class="info-row">
+                            <span class="info-label">Full Name</span>
+                            <span class="info-value">Amaya Perera</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Date of Birth</span>
+                            <span class="info-value">02 March 2004</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Gender</span>
+                            <span class="info-value">Female</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">NIC / Passport</span>
+                            <span class="info-value">200412345678</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">amaya@example.com</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <span class="info-value">+94 77 123 4567</span>
+                        </div>
+                        <div class="info-row no-border">
+                            <span class="info-label">Address</span>
+                            <span class="info-value">123, Galle Road, Colombo 04, Sri Lanka</span>
+                        </div>
+                    </div>
+
+                    <!-- Documents / Payment Summary -->
+                    <div class="profile-card">
+                        <h4><i class="fas fa-file-invoice"></i> Documents</h4>
+                        <h5>Payment Summary</h5>
+                        <div class="payment-summary">
+                            <div class="summary-row">
+                                <span>Total Fees</span>
+                                <span><strong>LKR 150,000</strong></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Paid Amount</span>
+                                <span><strong style="color:#2e7d32;">LKR 85,000</strong></span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Due Amount</span>
+                                <span><strong style="color:#c62828;">LKR 65,000</strong></span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="window.location.href='make-payment.html'">
+                            <i class="fas fa-credit-card"></i> View Payment Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

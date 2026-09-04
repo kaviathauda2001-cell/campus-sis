@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Campus SIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus SIS</span>
+            </div>
+            <div class="nav-label">Main</div>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="students.html"><i class="fas fa-user-graduate"></i> Students</a>
+            <a href="courses.html"><i class="fas fa-book"></i> Courses</a>
+            <a href="enrollments.html"><i class="fas fa-user-plus"></i> Enrollments</a>
+            <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+            <a href="settings.html" class="active"><i class="fas fa-cog"></i> Settings</a>
+            <div class="nav-label" style="margin-top:20px;">Student</div>
+            <a href="profile.html"><i class="fas fa-id-card"></i> Profile</a>
+            <a href="make-payment.html"><i class="fas fa-hand-holding-usd"></i> Make Payment</a>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Settings</h1>
+                    <p>Settings / Profile</p>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="admin-badge">
+                        <div class="avatar">A</div>
+                        Admin <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SETTINGS CONTENT ===== -->
+            <div class="settings-container">
+                <!-- Left: Profile Settings -->
+                <div class="settings-card">
+                    <div class="settings-profile-header">
+                        <div class="settings-avatar">A</div>
+                        <div>
+                            <h3>Admin User</h3>
+                            <p>admin@college.edu.lk</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-field">
+                        <span class="field-label">Full Name</span>
+                        <span class="field-value">Admin User</span>
+                    </div>
+                    <div class="settings-field">
+                        <span class="field-label">Email</span>
+                        <span class="field-value">admin@college.edu.lk</span>
+                    </div>
+                    <div class="settings-field">
+                        <span class="field-label">Phone</span>
+                        <span class="field-value">
+                            <input type="text" value="+94 77 000 1111" />
+                        </span>
+                    </div>
+
+                    <div class="settings-actions">
+                        <button class="btn btn-primary" onclick="changePassword()">
+                            <i class="fas fa-key"></i> Change Password
+                        </button>
+                        <button class="btn btn-success" onclick="updateProfile()">
+                            <i class="fas fa-save"></i> Update Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar Info -->
+                <div class="settings-sidebar-card">
+                    <h4><i class="fas fa-list"></i> Sidebar</h4>
+                    <div class="sidebar-item active"><i class="fas fa-chart-pie"></i> Dashboard</div>
+                    <div class="sidebar-item"><i class="fas fa-user-graduate"></i> Students</div>
+                    <div class="sidebar-item"><i class="fas fa-book"></i> Courses</div>
+                    <div class="sidebar-item"><i class="fas fa-user-plus"></i> Enrollments</div>
+                    <div class="sidebar-item"><i class="fas fa-credit-card"></i> Payments</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
